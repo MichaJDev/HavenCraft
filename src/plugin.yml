@@ -1,0 +1,5 @@
+name: SpackkVenture
+version: 0.1
+main: SpackkVenture.Main.SpackkVenture
+depend: [Vault] 
+author: MichaJDev 
