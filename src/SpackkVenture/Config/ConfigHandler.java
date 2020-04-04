@@ -71,5 +71,125 @@ public class ConfigHandler {
 	public FileConfiguration GetCrafterDrops() {
 		return YamlConfiguration.loadConfiguration(GetCrafterFile());
 	}
+	@SuppressWarnings("unused")
+	private void SetupHunterFile() {
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("blaze.min-money", 1.0);
+		GetHunterDrops().addDefault("blaze.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("cave_spider.min-money", 1.0);
+		GetHunterDrops().addDefault("cave_spider.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("chicken.min-money", 1.0);
+		GetHunterDrops().addDefault("chicken.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("cod.min-money", 1.0);
+		GetHunterDrops().addDefault("cod.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("cow.min-money", 1.0);
+		GetHunterDrops().addDefault("cow.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+		//Bat
+		GetHunterDrops().addDefault("bat.min-money", 1.0);
+		GetHunterDrops().addDefault("bat.max-money", 1.0);
+	}
 
 }

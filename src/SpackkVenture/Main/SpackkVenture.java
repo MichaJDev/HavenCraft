@@ -20,14 +20,14 @@ public class SpackkVenture extends JavaPlugin {
 		getLogger().info("Setting up Configuration Files");
 		cfg.SetupConfig();
 		getLogger().info("Setting up Vault hook");
+		setupEconomy();
 		getLogger().info("Getting PVE Listeners");
-		getListeners();
+		getServer().getPluginManager().registerEvents(new MobMoneyListener(this), this);
 		getLogger().info("Setting up Metrics Hook");
 		@SuppressWarnings("unused")
 		Metrics met = new Metrics(this, plugID);
 	}
 
-	@SuppressWarnings("unused")
 	private boolean setupEconomy() {
 		if (getServer().getPluginManager().getPlugin("Vault") == null) {
 			return false;
@@ -40,7 +40,4 @@ public class SpackkVenture extends JavaPlugin {
 		return econ != null;
 	}
 
-	private void getListeners() {
-		getServer().getPluginManager().registerEvents(new MobMoneyListener(this), this);
-	}
 }
