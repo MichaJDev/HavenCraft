@@ -4,13 +4,14 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import SpackkVenture.Config.ConfigHandler;
+import SpackkVenture.Listeners.MobMoneyListener;
 import net.milkbowl.vault.economy.Economy;
 
 public class SpackkVenture extends JavaPlugin {
 
 	public Economy econ = null;
 	protected ConfigHandler cfg;
-	private int plugID = 6980;
+	protected int plugID = 6980;
 
 	@Override
 	public void onEnable() {
@@ -40,6 +41,6 @@ public class SpackkVenture extends JavaPlugin {
 	}
 
 	private void getListeners() {
-		getServer().getPluginManager().registerEvents(new PlayerPveEvent(this), this);
+		getServer().getPluginManager().registerEvents(new MobMoneyListener(this), this);
 	}
 }
