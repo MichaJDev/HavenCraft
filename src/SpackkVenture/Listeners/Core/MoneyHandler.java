@@ -21,4 +21,7 @@ public class MoneyHandler {
 				+ cfg.GetHunterDrops().getInt(type.toString().toLowerCase() + ".max-money");
 
 	}
+	public double GetFishAmount(EntityType type) {
+		return 0.0;
+	}
 }

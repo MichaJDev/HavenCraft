@@ -36,7 +36,7 @@ public class JobCfgHandler {
 
 	private void CreateJobsYml() {
 		File file;
-		String[] jobs = { "Hunter.yml", "Explorer.yml", "Crafter.yml" };
+		String[] jobs = { "Hunter.yml", "Fisher.yml" };
 		for (String s : jobs) {
 			file = new File(GetJobDir(), s);
 			try {
