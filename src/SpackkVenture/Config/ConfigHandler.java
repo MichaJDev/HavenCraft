@@ -2,25 +2,21 @@ package SpackkVenture.Config;
 
 import SpackkVenture.Config.Guilds.GuildCfgHandler;
 import SpackkVenture.Config.Jobs.JobCfgHandler;
+import SpackkVenture.Config.Messages.MsgHandler;
 import SpackkVenture.Main.SpackkVenture;
 
 public class ConfigHandler {
-	protected SpackkVenture main;
 
-	public ConfigHandler(SpackkVenture main) {
-		this.main = main;
-	}
-
-	public JobCfgHandler getJobs() {
+	public static JobCfgHandler getJobs(SpackkVenture main) {
 		return new JobCfgHandler(main);
 	}
 
-	public GuildCfgHandler getGuilds() {
+	public static GuildCfgHandler getGuilds(SpackkVenture main) {
 		return new GuildCfgHandler(main);
 	}
 
-	public void Setup() {
-		getJobs().Setup();
+	public static MsgHandler getMessages(SpackkVenture main) {
+		return new MsgHandler(main);
 	}
 
 }

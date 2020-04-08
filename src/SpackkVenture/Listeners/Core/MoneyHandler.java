@@ -12,7 +12,7 @@ public class MoneyHandler {
 
 	public MoneyHandler(SpackkVenture main) {
 		this.main = main;
-		cfg = new ConfigHandler(main).getJobs();
+		cfg = ConfigHandler.getJobs(main);
 	}
 
 	public double GetDepositeAmount(EntityType type) {

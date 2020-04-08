@@ -6,14 +6,18 @@ import java.io.IOException;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
+import SpackkVenture.Config.ConfigHandler;
+import SpackkVenture.Config.Messages.MsgHandler;
 import SpackkVenture.Main.SpackkVenture;
 
 public class GuildCfgHandler {
 
 	protected SpackkVenture main;
+	protected MsgHandler msg;
 
 	public GuildCfgHandler(SpackkVenture main) {
 		this.main = main;
+		msg = ConfigHandler.getMessages(main);
 	}
 
 	public void Setup() {
@@ -32,7 +36,7 @@ public class GuildCfgHandler {
 	}
 
 	public void Create(Player p, String name) {
-		p.sendMessage(ChatColor.translateAlternateColorCodes('&', MsgHandler.getMessage("Guild.Creating")));
+		p.sendMessage(ChatColor.translateAlternateColorCodes('&', msg.getMessage("Guild.Creating")));
 	}
 
 	private File GetDir() {

@@ -15,10 +15,9 @@ public class SpackkVenture extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
-		cfg = new ConfigHandler(this);
 		saveDefaultConfig();
 		getLogger().info("Setting up Configuration Files");
-		cfg.Setup();
+
 		getLogger().info("Setting up Vault hook");
 		setupEconomy();
 		getLogger().info("Getting PVE Listeners");
@@ -38,6 +37,10 @@ public class SpackkVenture extends JavaPlugin {
 		}
 		econ = rsp.getProvider();
 		return econ != null;
+	}
+
+	private void SetupConfigs() {
+
 	}
 
 }
