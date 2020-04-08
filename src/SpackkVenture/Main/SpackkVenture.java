@@ -18,7 +18,7 @@ public class SpackkVenture extends JavaPlugin {
 		cfg = new ConfigHandler(this);
 		saveDefaultConfig();
 		getLogger().info("Setting up Configuration Files");
-		cfg.SetupConfig();
+		cfg.Setup();
 		getLogger().info("Setting up Vault hook");
 		setupEconomy();
 		getLogger().info("Getting PVE Listeners");
