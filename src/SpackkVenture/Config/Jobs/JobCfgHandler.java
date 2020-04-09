@@ -14,10 +14,10 @@ public class JobCfgHandler {
 
 	public JobCfgHandler(SpackkVenture main) {
 		this.main = main;
+		Setup();
 	}
 
-	public void Setup() {
-
+	private void Setup() {
 		if (!GetJobDir().exists()) {
 			CreateJobsDir();
 			CreateJobsYml();

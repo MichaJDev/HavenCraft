@@ -9,4 +9,9 @@ public class MsgHandler {
 	public MsgHandler(SpackkVenture main) {
 		this.main = main;
 	}
+
+	public String getMessage(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

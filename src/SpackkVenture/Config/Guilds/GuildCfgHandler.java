@@ -18,10 +18,13 @@ public class GuildCfgHandler {
 	public GuildCfgHandler(SpackkVenture main) {
 		this.main = main;
 		msg = ConfigHandler.getMessages(main);
+		Setup();
 	}
 
-	public void Setup() {
-
+	private void Setup() {
+		if (!GetDir().exists()) {
+			CreateDir();
+		}
 	}
 
 	private void CreateDir() {
