@@ -20,6 +20,6 @@ public class ConfigHandler {
 	}
 
 	public static void getPaties() {
-		return;
+		return null;
 	}
 }
