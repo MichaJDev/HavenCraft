@@ -19,7 +19,7 @@ public class ConfigHandler {
 		return new MsgHandler(main);
 	}
 
-	public static void getPaties() {
-		return null;
+	public static void getPaties(SpackkVenture main) {
+		return new PartyCfgHandler(main);
 	}
 }
