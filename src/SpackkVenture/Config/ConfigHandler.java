@@ -19,4 +19,7 @@ public class ConfigHandler {
 		return new MsgHandler(main);
 	}
 
+	public static void getPaties() {
+		return;
+	}
 }
