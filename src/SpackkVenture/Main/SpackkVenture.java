@@ -4,9 +4,9 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import SpackkVenture.Config.ConfigHandler;
-import SpackkVenture.Config.Messages.MsgHandler;
 import SpackkVenture.Config.Guilds.GuildCfgHandler;
 import SpackkVenture.Config.Jobs.JobCfgHandler;
+import SpackkVenture.Config.Messages.MsgHandler;
 import SpackkVenture.Listeners.MobMoneyListener;
 import net.milkbowl.vault.economy.Economy;
 
