@@ -3,6 +3,7 @@ package SpackkVenture.Config;
 import SpackkVenture.Config.Guilds.GuildCfgHandler;
 import SpackkVenture.Config.Jobs.JobCfgHandler;
 import SpackkVenture.Config.Messages.MsgHandler;
+import SpackkVenture.Config.Parties.PartyCfgHandler;
 import SpackkVenture.Main.SpackkVenture;
 
 public class ConfigHandler {
@@ -19,7 +20,7 @@ public class ConfigHandler {
 		return new MsgHandler(main);
 	}
 
-	public static void getPaties(SpackkVenture main) {
+	public static PartyCfgHandler getPaties(SpackkVenture main) {
 		return new PartyCfgHandler(main);
 	}
 }
