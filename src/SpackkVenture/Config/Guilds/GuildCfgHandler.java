@@ -40,10 +40,27 @@ public class GuildCfgHandler {
 
 	public void Create(Player p, String name) {
 		p.sendMessage(ChatColor.translateAlternateColorCodes('&', msg.getMessage("Guild.Creating")));
+		CreateFile(p.getUniqueId().toString());
+
+	}
+
+	public void Invite(Player p, String name) {
+
 	}
 
 	private File GetDir() {
 		return new File(main.getDataFolder(), "/Guilds/");
+	}
+
+	private void CreateGuildDir(Player p) {
+		File file = new File(GetDir(), p.getUniqueId() + ".yml");
+		if (!file.exists()) {
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				main.getLogger().severe(e.toString());
+			}
+		}
 	}
 
 	private void CreateFile(String name) {
@@ -55,6 +72,21 @@ public class GuildCfgHandler {
 				main.getLogger().severe(e.toString());
 			}
 		}
+	}
+
+	private File GetPlayerFile(Player p) {
+		for (File file : GetDir().listFiles()) {
+			for (File pFile : file.listFiles()) {
+				if (pFile.getName().contains(p.getUniqueId().toString())) {
+					return pFile;
+				}
+			}
+		}
+		return null;
+	}
+
+	private void fillPlayerFile(Player p, String GuildUUID) {
+
 	}
 
 }

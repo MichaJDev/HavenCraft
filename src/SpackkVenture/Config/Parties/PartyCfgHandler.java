@@ -8,4 +8,5 @@ public class PartyCfgHandler {
 	public PartyCfgHandler(SpackkVenture main) {
 		this.main = main;
 	}
+
 }

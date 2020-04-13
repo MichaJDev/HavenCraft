@@ -11,7 +11,6 @@ public class MsgHandler {
 	}
 
 	public String getMessage(String string) {
-		// TODO Auto-generated method stub
-		return null;
+		return main.getConfig().getString(string);
 	}
 }
