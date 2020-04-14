@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import SpackkVenture.Config.ConfigHandler;
@@ -53,7 +55,7 @@ public class GuildCfgHandler {
 	}
 
 	private void CreateGuildDir(Player p) {
-		File file = new File(GetDir(), p.getUniqueId() + ".yml");
+		File file = new File(GetDir(), p.getUniqueId().toString() + GetDir().listFiles().length + ".yml");
 		if (!file.exists()) {
 			try {
 				file.createNewFile();
@@ -85,8 +87,13 @@ public class GuildCfgHandler {
 		return null;
 	}
 
-	private void fillPlayerFile(Player p, String GuildUUID) {
-
+	private void fillPlayerFile(String UUID) {
+		for (File file : GetDir().listFiles()) {
+			if (file.getName().contains(UUID)) {
+				FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
+				cfg.addDefault("GuildName", value);
+			}
+		}
 	}
 
 }
