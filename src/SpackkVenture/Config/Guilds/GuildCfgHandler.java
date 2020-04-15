@@ -11,6 +11,8 @@ import org.bukkit.entity.Player;
 import SpackkVenture.Config.ConfigHandler;
 import SpackkVenture.Config.Messages.MsgHandler;
 import SpackkVenture.Main.SpackkVenture;
+import SpackkVenture.Models.Guild;
+import SpackkVenture.Models.Interfaces.IGuild;
 
 public class GuildCfgHandler {
 
@@ -40,9 +42,14 @@ public class GuildCfgHandler {
 		}
 	}
 
-	public void Create(Player p, String name) {
+	public void CreateNewGuild(Player p, String guildName) {
+		Guild g = new Guild(p, guildName);
+	}
+
+	public void AddMember(Player p) {
 		p.sendMessage(ChatColor.translateAlternateColorCodes('&', msg.getMessage("Guild.Creating")));
-		CreateFile(p.getUniqueId().toString());
+		Guild g = GuildHandler.getGuild(p);
+		CreateMemberFile(g, p);
 
 	}
 
@@ -54,8 +61,8 @@ public class GuildCfgHandler {
 		return new File(main.getDataFolder(), "/Guilds/");
 	}
 
-	private void CreateGuildDir(Player p) {
-		File file = new File(GetDir(), p.getUniqueId().toString() + GetDir().listFiles().length + ".yml");
+	private void CreateGuildDir(Guild g) {
+		File file = new File(GetDir(), g.GetGuilGUUID().toString() + GetDir().listFiles().length + ".yml");
 		if (!file.exists()) {
 			try {
 				file.createNewFile();
@@ -65,33 +72,35 @@ public class GuildCfgHandler {
 		}
 	}
 
-	private void CreateFile(String name) {
-		File file = new File(GetDir(), name + "yml");
+	private void CreateMemberFile(Guild g, Player p) {
+		File file = new File(GetDirGuild(g.GetGuilGUUID()), p.getUniqueId().toString() + "yml");
 		if (!file.exists()) {
 			try {
 				file.createNewFile();
+
 			} catch (IOException e) {
 				main.getLogger().severe(e.toString());
 			}
+			FillPlayerFile(g);
 		}
 	}
 
-	private File GetPlayerFile(Player p) {
+	private File GetGuildFile(Guild g) {
 		for (File file : GetDir().listFiles()) {
-			for (File pFile : file.listFiles()) {
-				if (pFile.getName().contains(p.getUniqueId().toString())) {
-					return pFile;
+			for (File gFile : file.listFiles()) {
+				if (gFile.getName().contains(g.GetGuilGUUID().toString())) {
+					return gFile;
 				}
 			}
 		}
 		return null;
 	}
 
-	private void fillPlayerFile(String UUID) {
+	private void FillPlayerFile(Guild guild) {
 		for (File file : GetDir().listFiles()) {
-			if (file.getName().contains(UUID)) {
+			if (file.getName().contains(guild.GetGuilGUUID().toString())) {
 				FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
-				cfg.addDefault("GuildName", value);
+				cfg.addDefault("GuildName", guild.GetGuildName());
 			}
 		}
 	}
