@@ -5,13 +5,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import HavenCraft.Main.SpackkVenture;
+import HavenCraft.Main.HavenCraft;
 
 public class PlayerListener implements Listener {
 
-	SpackkVenture main;
+	HavenCraft main;
 
-	public PlayerListener(SpackkVenture main) {
+	public PlayerListener(HavenCraft main) {
 		this.main = main;
 	}
 

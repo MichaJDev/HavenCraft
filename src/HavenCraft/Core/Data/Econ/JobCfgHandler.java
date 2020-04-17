@@ -6,13 +6,13 @@ import java.io.IOException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import HavenCraft.Main.SpackkVenture;
+import HavenCraft.Main.HavenCraft;
 
 public class JobCfgHandler {
 
-	protected SpackkVenture main;
+	protected HavenCraft main;
 
-	public JobCfgHandler(SpackkVenture main) {
+	public JobCfgHandler(HavenCraft main) {
 		this.main = main;
 		Setup();
 	}

@@ -1,12 +1,12 @@
 package HavenCraft.Core.Utils.Messages;
 
-import HavenCraft.Main.SpackkVenture;
+import HavenCraft.Main.HavenCraft;
 
 public class MsgHandler {
 
-	protected SpackkVenture main;
+	protected HavenCraft main;
 
-	public MsgHandler(SpackkVenture main) {
+	public MsgHandler(HavenCraft main) {
 		this.main = main;
 	}
 

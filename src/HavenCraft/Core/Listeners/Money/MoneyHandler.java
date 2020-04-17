@@ -4,13 +4,13 @@ import org.bukkit.entity.EntityType;
 
 import HavenCraft.Core.Data.ConfigHandler;
 import HavenCraft.Core.Data.Econ.JobCfgHandler;
-import HavenCraft.Main.SpackkVenture;
+import HavenCraft.Main.HavenCraft;
 
 public class MoneyHandler {
-	protected SpackkVenture main;
+	protected HavenCraft main;
 	protected JobCfgHandler cfg;
 
-	public MoneyHandler(SpackkVenture main) {
+	public MoneyHandler(HavenCraft main) {
 		this.main = main;
 		cfg = ConfigHandler.getJobs(main);
 	}

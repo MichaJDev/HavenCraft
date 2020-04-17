@@ -13,15 +13,15 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import HavenCraft.Core.Listeners.Money.MoneyHandler;
-import HavenCraft.Main.SpackkVenture;
+import HavenCraft.Main.HavenCraft;
 
 public class MobMoneyListener implements Listener {
-	SpackkVenture main;
+	HavenCraft main;
 	MoneyHandler money;
 	private ItemStack droppedItem;
 	private double cur;
 
-	public MobMoneyListener(SpackkVenture main) {
+	public MobMoneyListener(HavenCraft main) {
 		this.main = main;
 		money = new MoneyHandler(main);
 	}

@@ -8,15 +8,15 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import HavenCraft.Main.SpackkVenture;
+import HavenCraft.Main.HavenCraft;
 
 public class ChatListener implements Listener {
 
-	SpackkVenture main;
+	HavenCraft main;
 
 	private String normalChatFormat;
 
-	public ChatListener(SpackkVenture main) {
+	public ChatListener(HavenCraft main) {
 		this.main = main;
 	}
 

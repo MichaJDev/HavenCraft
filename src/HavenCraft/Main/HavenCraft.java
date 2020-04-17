@@ -5,19 +5,19 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import HavenCraft.Core.Data.ConfigHandler;
 import HavenCraft.Core.Data.Econ.JobCfgHandler;
-import HavenCraft.Core.Data.Guilds.GuildCfgHandler;
+import HavenCraft.Core.Data.Guilds.GuildDB;
 import HavenCraft.Core.Listeners.MobMoneyListener;
 import HavenCraft.Core.Utils.Messages.MsgHandler;
 import net.milkbowl.vault.economy.Economy;
 
-public class SpackkVenture extends JavaPlugin {
+public class HavenCraft extends JavaPlugin {
 
 	public Economy econ = null;
 	protected ConfigHandler cfg;
 	protected int plugID = 6980;
 	protected MsgHandler msg;
 	protected JobCfgHandler jobs;
-	protected GuildCfgHandler guilds;
+	protected GuildDB guilds;
 
 	@Override
 	public void onEnable() {

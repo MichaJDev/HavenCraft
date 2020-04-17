@@ -1,11 +1,11 @@
 package HavenCraft.Core.Data.Parties;
 
-import HavenCraft.Main.SpackkVenture;
+import HavenCraft.Main.HavenCraft;
 
 public class PartyCfgHandler {
-	protected SpackkVenture main;
+	protected HavenCraft main;
 
-	public PartyCfgHandler(SpackkVenture main) {
+	public PartyCfgHandler(HavenCraft main) {
 		this.main = main;
 	}
 
