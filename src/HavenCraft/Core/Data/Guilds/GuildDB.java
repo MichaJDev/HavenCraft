@@ -71,7 +71,7 @@ public class GuildDB {
 	}
 
 	private void CreateNewGuildDir(Guild g) {
-		File file = new File(GetPrimaryDir(), "/" + g.GetGuilGUUID().toString() + "/");
+		File file = new File(GetPrimaryDir(), "/" + g.GetGUUID().toString() + "/");
 		if (!file.exists()) {
 			file.mkdirs();
 		}

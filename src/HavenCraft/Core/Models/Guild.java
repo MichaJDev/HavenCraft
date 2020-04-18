@@ -32,7 +32,7 @@ public class Guild implements IGuild {
 	}
 
 	@Override
-	public UUID GetGuilGUUID() {
+	public UUID GetGUUID() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -62,7 +62,7 @@ public class Guild implements IGuild {
 	}
 
 	@Override
-	public void SetGuildGUUID() {
+	public void SetGUUID() {
 		// TODO Auto-generated method stub
 
 	}

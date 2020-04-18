@@ -9,7 +9,7 @@ public interface IGuild {
 
 	public String GetGuildName();
 
-	public UUID GetGuilGUUID();
+	public UUID GetGUUID();
 
 	public Player GetGuildLeader();
 
@@ -19,7 +19,7 @@ public interface IGuild {
 
 	public void SetGuildName();
 
-	public void SetGuildGUUID();
+	public void SetGUUID();
 
 	public void SetGuildLeader();
 
