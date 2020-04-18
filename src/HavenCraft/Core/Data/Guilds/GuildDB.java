@@ -68,12 +68,29 @@ public class GuildDB {
 
 	protected void CreateNew(Guild g) {
 		CreateNewGuildDir(g);
+		CreateNewGuildFile(g);
 	}
 
 	private void CreateNewGuildDir(Guild g) {
 		File file = new File(GetPrimaryDir(), "/" + g.GetGUUID().toString() + "/");
 		if (!file.exists()) {
 			file.mkdirs();
+		}
+	}
+
+	private File GetGuildDir(Guild g) {
+		return new File(GetPrimaryDir(), "/" + g.GetGUUID().toString() + "/");
+
+	}
+
+	private void CreateNewGuildFile(Guild g) {
+		File file = new File(GetGuildDir(g), g.GetGuildLeader().getUniqueId().toString() + ".yml");
+		if (!file.exists()) {
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				main.getLogger().severe(e.toString());
+			}
 		}
 	}
 }
