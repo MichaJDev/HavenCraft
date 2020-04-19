@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 import HavenCraft.Core.Models.Guild;
 import HavenCraft.Main.HavenCraft;
@@ -91,6 +92,34 @@ public class GuildDB {
 			} catch (IOException e) {
 				main.getLogger().severe(e.toString());
 			}
+			FillNewGuildFile(g);
+		}
+	}
+
+	private File GetGuildFile(Guild g) {
+		return new File(GetGuildDir(g), g.GetGUUID().toString() + ".yml");
+	}
+
+	private FileConfiguration GetGuildCfg(Guild g) {
+		return YamlConfiguration.loadConfiguration(GetGuildFile(g));
+	}
+
+	private void FillNewGuildFile(Guild g) {
+		FileConfiguration cfg = GetGuildCfg(g);
+		cfg.addDefault("Name", g.GetGuildName());
+		cfg.addDefault("Leader", g.GetGuildLeader());
+		cfg.addDefault("GUUID", g.GetGUUID());
+		for (Player p : g.GetGuildModerators()) {
+			cfg.addDefault("Moderators." + p.getUniqueId().toString(), p.getDisplayName());
+		}
+		for (Player p : g.GetGuildMembers()) {
+			cfg.addDefault("Members." + p.getUniqueId().toString(), p.getDisplayName());
+		}
+		cfg.options().copyDefaults(true);
+		try {
+			cfg.save(GetGuildFile(g));
+		} catch (IOException e) {
+			main.getLogger().severe(e.toString());
 		}
 	}
 }
