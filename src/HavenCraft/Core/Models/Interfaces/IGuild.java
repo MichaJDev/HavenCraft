@@ -17,11 +17,11 @@ public interface IGuild {
 
 	public List<Player> GetGuildMembers();
 
-	public void SetGuildName();
+	public void SetGuildName(String name);
 
-	public void SetGUUID();
+	public void SetGUUID(UUID id);
 
-	public void SetGuildLeader();
+	public void SetGuildLeader(Player p);
 
 	public void AddGuildModerator();
 

@@ -20,6 +20,14 @@ public class Guild implements IGuild {
 
 	List<Player> guildMembers = new ArrayList<Player>();
 
+	public Guild() {
+
+	}
+
+	public Guild(UUID uuid) {
+		this.guildGUUID = uuid;
+	}
+
 	public Guild(Player p, String name) {
 		guildName = name;
 		guildLeader = p;
@@ -56,20 +64,20 @@ public class Guild implements IGuild {
 	}
 
 	@Override
-	public void SetGuildName() {
-		// TODO Auto-generated method stub
+	public void SetGuildName(String name) {
+		this.guildName = name;
 
 	}
 
 	@Override
-	public void SetGUUID() {
-		// TODO Auto-generated method stub
+	public void SetGUUID(UUID id) {
+		this.guildGUUID = id;
 
 	}
 
 	@Override
-	public void SetGuildLeader() {
-		// TODO Auto-generated method stub
+	public void SetGuildLeader(Player p) {
+		this.guildLeader = p;
 
 	}
 

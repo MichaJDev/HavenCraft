@@ -2,7 +2,9 @@ package HavenCraft.Core.Data.Guilds;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.UUID;
 
+import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -28,6 +30,27 @@ public class GuildDB {
 		if (!file.exists()) {
 			file.mkdirs();
 		}
+	}
+
+	protected UUID GetGUUIDFromPlayer(Player p) {
+		UUID GUUID = null;
+		for (File file : GetPrimaryDir().listFiles()) {
+			for (File player : file.listFiles()) {
+				if (player.getName().contains(p.getUniqueId().toString())) {
+					GUUID = UUID.fromString(player.getParent());
+				}
+			}
+		}
+		return GUUID;
+	}
+
+	protected Guild GetGuild(UUID GUUID) {
+		Guild g = new Guild(GUUID);
+		FileConfiguration gcfg = GetGuildCfg(g);
+		Player Leader = main.getServer().getPlayer(UUID.fromString(gcfg.getString("Leader")));
+		g.SetGuildLeader(Leader);
+		g.SetGuildName(gcfg.getString("Name"));
+		return g;
 	}
 
 	private File GetPrimaryDir() {
@@ -107,7 +130,7 @@ public class GuildDB {
 	private void FillNewGuildFile(Guild g) {
 		FileConfiguration cfg = GetGuildCfg(g);
 		cfg.addDefault("Name", g.GetGuildName());
-		cfg.addDefault("Leader", g.GetGuildLeader());
+		cfg.addDefault("Leader", g.GetGuildLeader().getUniqueId());
 		cfg.addDefault("GUUID", g.GetGUUID());
 		for (Player p : g.GetGuildModerators()) {
 			cfg.addDefault("Moderators." + p.getUniqueId().toString(), p.getDisplayName());
