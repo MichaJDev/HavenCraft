@@ -4,7 +4,7 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import HavenCraft.Core.Data.Database;
-import HavenCraft.Core.Data.Econ.JobCfgHandler;
+import HavenCraft.Core.Data.Econ.EconDB;
 import HavenCraft.Core.Data.Guilds.GuildDB;
 import HavenCraft.Core.Listeners.MobMoneyListener;
 import HavenCraft.Core.Utils.Messages.MsgHandler;
@@ -16,16 +16,16 @@ public class HavenCraft extends JavaPlugin {
 	protected Database cfg;
 	protected int plugID = 6980;
 	protected MsgHandler msg;
-	protected JobCfgHandler jobs;
+	protected EconDB jobs;
 	protected GuildDB guilds;
 
 	@Override
 	public void onEnable() {
 		saveDefaultConfig();
 		getLogger().info("Setting up Configuration Files");
-		msg = Database.getMessages(this);
-		jobs = Database.getJobs(this);
-		guilds = Database.getGuilds(this);
+		msg = Database.GetMessages(this);
+		jobs = Database.GetEconDB(this);
+		guilds = Database.GetGuildDB(this);
 		getLogger().info("Setting up Vault hook");
 		setupEconomy();
 		getLogger().info("Getting PVE Listeners");

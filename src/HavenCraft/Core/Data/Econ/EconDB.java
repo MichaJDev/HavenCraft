@@ -8,11 +8,11 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import HavenCraft.Main.HavenCraft;
 
-public class JobCfgHandler {
+public class EconDB {
 
 	protected HavenCraft main;
 
-	public JobCfgHandler(HavenCraft main) {
+	public EconDB(HavenCraft main) {
 		this.main = main;
 		Setup();
 	}
