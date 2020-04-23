@@ -6,7 +6,7 @@ import HavenCraft.Core.Data.Parties.PartyCfgHandler;
 import HavenCraft.Core.Utils.Messages.MsgHandler;
 import HavenCraft.Main.HavenCraft;
 
-public class ConfigHandler {
+public class Database {
 
 	public static JobCfgHandler getJobs(HavenCraft main) {
 		return new JobCfgHandler(main);

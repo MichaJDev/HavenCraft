@@ -81,22 +81,4 @@ public class Guild implements IGuild {
 
 	}
 
-	@Override
-	public void AddGuildModerator() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void DeleteModerator() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void DeleteGuildMember() {
-		// TODO Auto-generated method stub
-
-	}
-
 }

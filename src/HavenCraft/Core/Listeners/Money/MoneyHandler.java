@@ -2,7 +2,7 @@ package HavenCraft.Core.Listeners.Money;
 
 import org.bukkit.entity.EntityType;
 
-import HavenCraft.Core.Data.ConfigHandler;
+import HavenCraft.Core.Data.Database;
 import HavenCraft.Core.Data.Econ.JobCfgHandler;
 import HavenCraft.Main.HavenCraft;
 
@@ -12,7 +12,7 @@ public class MoneyHandler {
 
 	public MoneyHandler(HavenCraft main) {
 		this.main = main;
-		cfg = ConfigHandler.getJobs(main);
+		cfg = Database.getJobs(main);
 	}
 
 	public double GetDepositeAmount(EntityType type) {

@@ -23,9 +23,4 @@ public interface IGuild {
 
 	public void SetGuildLeader(Player p);
 
-	public void AddGuildModerator();
-
-	public void DeleteModerator();
-
-	public void DeleteGuildMember();
 }

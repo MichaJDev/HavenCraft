@@ -3,7 +3,7 @@ package HavenCraft.Main;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import HavenCraft.Core.Data.ConfigHandler;
+import HavenCraft.Core.Data.Database;
 import HavenCraft.Core.Data.Econ.JobCfgHandler;
 import HavenCraft.Core.Data.Guilds.GuildDB;
 import HavenCraft.Core.Listeners.MobMoneyListener;
@@ -13,7 +13,7 @@ import net.milkbowl.vault.economy.Economy;
 public class HavenCraft extends JavaPlugin {
 
 	public Economy econ = null;
-	protected ConfigHandler cfg;
+	protected Database cfg;
 	protected int plugID = 6980;
 	protected MsgHandler msg;
 	protected JobCfgHandler jobs;
@@ -23,9 +23,9 @@ public class HavenCraft extends JavaPlugin {
 	public void onEnable() {
 		saveDefaultConfig();
 		getLogger().info("Setting up Configuration Files");
-		msg = ConfigHandler.getMessages(this);
-		jobs = ConfigHandler.getJobs(this);
-		guilds = ConfigHandler.getGuilds(this);
+		msg = Database.getMessages(this);
+		jobs = Database.getJobs(this);
+		guilds = Database.getGuilds(this);
 		getLogger().info("Setting up Vault hook");
 		setupEconomy();
 		getLogger().info("Getting PVE Listeners");

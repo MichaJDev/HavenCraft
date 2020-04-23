@@ -2,9 +2,9 @@ package HavenCraft.Core.Data.Guilds;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.UUID;
 
-import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -15,6 +15,7 @@ import HavenCraft.Main.HavenCraft;
 public class GuildDB {
 
 	HavenCraft main;
+	HashMap<Guild, Player> invites = new HashMap<Guild, Player>();
 
 	public GuildDB(HavenCraft main) {
 		this.main = main;
@@ -132,17 +133,24 @@ public class GuildDB {
 		cfg.addDefault("Name", g.GetGuildName());
 		cfg.addDefault("Leader", g.GetGuildLeader().getUniqueId());
 		cfg.addDefault("GUUID", g.GetGUUID());
-		for (Player p : g.GetGuildModerators()) {
-			cfg.addDefault("Moderators." + p.getUniqueId().toString(), p.getDisplayName());
-		}
-		for (Player p : g.GetGuildMembers()) {
-			cfg.addDefault("Members." + p.getUniqueId().toString(), p.getDisplayName());
-		}
 		cfg.options().copyDefaults(true);
 		try {
 			cfg.save(GetGuildFile(g));
 		} catch (IOException e) {
 			main.getLogger().severe(e.toString());
 		}
+	}
+
+	public void AddGuildInvite(Player inviter, Player target) {
+		Guild g = GetGuild(GetGUUIDFromPlayer(inviter));
+
+	}
+
+	public HashMap<Guild, Player> GetGuildInvites() {
+		return this.invites;
+	}
+
+	public void AddGuildMember(Player inviter, Player target) {
+
 	}
 }
